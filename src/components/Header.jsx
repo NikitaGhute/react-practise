@@ -1,65 +1,107 @@
 import React from "react";
 import '../../src/components/Style.css'
+import {
+  MapPin,
+  Search,
+  ShoppingCart,
+  Menu,
+  ChevronDown,
+} from "lucide-react";
+import Navbar from  '../components/Navbar' 
 
-const Header= ()=>{
-    return (
-         
-   <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        
-        {/* <!-- Logo Section --> */}
-        <div class="flex-shrink-0 flex items-center">
-          <a href="#" class="text-xl font-bold text-indigo-600 tracking-wide">BrandLogo</a>
+
+// const Header= ()=>{
+//     return (
+//          <>
+   
+
+//          </>
+//     )
+// };
+
+// export default Header;
+
+
+const Header = () => {
+  return (
+    <>
+      {/* Top Header */}
+      <header className="bg-[#131921] text-white">
+
+        <div className="flex items-center justify-between px-4 py-2">
+
+          {/* Logo */}
+          <div className="flex items-center cursor-pointer">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+              alt="amazon"
+              className="w-28"
+            />
+          </div>
+
+          {/* Location */}
+          <div className="hidden md:flex items-center ml-4 cursor-pointer">
+            <MapPin size={18} />
+            <div className="ml-1 text-xs leading-3">
+              <p className="text-gray-300">Delivering to Mumbai</p>
+              <p className="font-semibold text-white">Update location</p>
+            </div>
+          </div>
+
+          {/* Search */}
+          <div className="flex flex-1 mx-5">
+
+            <select className="bg-gray-200 text-black px-2 rounded-l-md outline-none">
+              <option>All</option>
+            </select>
+
+            <input
+              type="text"
+              placeholder="Search Amazon.in"
+              className="flex-1 px-3 text-black outline-none"
+            />
+
+            <button className="bg-yellow-400 px-4 rounded-r-md">
+              <Search size={22} className="text-black" />
+            </button>
+
+          </div>
+
+          {/* Language */}
+          <div className="hidden lg:flex items-center cursor-pointer">
+            🇮🇳
+            <span className="ml-1 font-semibold">EN</span>
+            <ChevronDown size={16} />
+          </div>
+
+          {/* Account */}
+          <div className="hidden lg:block ml-5 cursor-pointer">
+            <p className="text-xs">Hello, sign in</p>
+            <p className="font-semibold text-sm">
+              Account & Lists
+            </p>
+          </div>
+
+          {/* Orders */}
+          <div className="hidden lg:block ml-5 cursor-pointer">
+            <p className="text-xs">Returns</p>
+            <p className="font-semibold text-sm">
+              & Orders
+            </p>
+          </div>
+
+          {/* Cart */}
+          <div className="flex items-center ml-5 cursor-pointer">
+            <ShoppingCart size={34} />
+            <span className="font-bold mt-2">Cart</span>
+          </div>
+
         </div>
+      </header>
 
-        {/* <!-- Desktop Links (Hidden on Mobile) --> */}
-        <div class="hidden md:flex space-x-8 font-medium text-gray-600">
-          <a href="#" class="hover:text-indigo-600 transition duration-150 ease-in-out">Home</a>
-          <a href="#" class="hover:text-indigo-600 transition duration-150 ease-in-out">About</a>
-          <a href="#" class="hover:text-indigo-600 transition duration-150 ease-in-out">Services</a>
-          <a href="#" class="hover:text-indigo-600 transition duration-150 ease-in-out">Contact</a>
-        </div>
-
-        {/* <!-- Call to Action Button (Desktop Only) --> */}
-        <div class="hidden md:flex items-center">
-          <button class="bg-indigo-600 text-white px-4 py-2 rounded-md font-medium hover:bg-indigo-700 transition duration-150 ease-in-out">
-            Get Started
-          </button>
-        </div>
-
-        {/* <!-- Mobile Menu Hamburger Button --> */}
-        <div class="flex md:hidden items-center">
-          <button id="menu-btn" class="text-gray-600 hover:text-indigo-600 focus:outline-none" aria-label="Toggle Menu">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
-        </div>
-
-      </div>
-    </div>
-
-    {/* <!-- Mobile Dropdown Menu (Hidden by Default) --> */}
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
-      <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-gray-600 font-medium">
-        <a href="#" class="block px-3 py-2 rounded-md hover:bg-indigo-50 hover:text-indigo-600">Home</a>
-        <a href="#" class="block px-3 py-2 rounded-md hover:bg-indigo-50 hover:text-indigo-600">About</a>
-        <a href="#" class="block px-3 py-2 rounded-md hover:bg-indigo-50 hover:text-indigo-600">Services</a>
-        <a href="#" class="block px-3 py-2 rounded-md hover:bg-indigo-50 hover:text-indigo-600">Contact</a>
-        <div class="pt-4 pb-2 border-t border-gray-200">
-          <button class="w-full bg-indigo-600 text-white px-4 py-2 rounded-md font-medium hover:bg-indigo-700">
-            Get Started
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-            //     <div className="header-btn">
-            //         <button> Get Started</button>
-            //     </div>
-            // </header>
-    )
+      <Navbar />
+    </>
+  );
 };
 
 export default Header;
