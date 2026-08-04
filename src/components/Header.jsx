@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       {/* Top Header */}
-      <header className="bg-[#131921] text-white">
+      <header className="bg-[#ffffff] text-black">
 
         <div className="flex items-center justify-between px-4 py-2">
 
@@ -43,22 +43,22 @@ const Header = () => {
           <div className="hidden md:flex items-center ml-4 cursor-pointer">
             <MapPin size={18} />
             <div className="ml-1 text-xs leading-3">
-              <p className="text-gray-300">Delivering to Mumbai</p>
-              <p className="font-semibold text-white">Update location</p>
+              <p className="text-black-300">Delivering to Mumbai</p>
+              <p className="font-semibold text-black">Update location</p>
             </div>
           </div>
 
           {/* Search */}
-          <div className="flex flex-1 mx-5">
+          <div className="flex flex-1 mx-5 border border-black-400 rounded-md">
 
-            <select className="bg-gray-200 text-black px-2 rounded-l-md outline-none">
+            <select className="bg-gray-200 text-black px-2 rounded-l-md">
               <option>All</option>
             </select>
 
             <input
               type="text"
               placeholder="Search Amazon.in"
-              className="flex-1 px-3 text-black outline-none"
+              className="flex-1 px-3 text-xs text-black"
             />
 
             <button className="bg-yellow-400 px-4 rounded-r-md">
@@ -92,8 +92,8 @@ const Header = () => {
 
           {/* Cart */}
           <div className="flex items-center ml-5 cursor-pointer">
-            <ShoppingCart size={34} />
-            <span className="font-bold mt-2">Cart</span>
+            <ShoppingCart size={28} />
+            <span className="mt-2 text-[16px]">Cart</span>
           </div>
 
         </div>
