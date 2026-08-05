@@ -8,21 +8,20 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Navbar from  '../components/Navbar' 
-
-
-// const Header= ()=>{
-//     return (
-//          <>
-   
-
-//          </>
-//     )
-// };
-
-// export default Header;
+import Locations from "../data/Locations";
 
 
 const Header = () => {
+
+  // useState forr login popup
+  const [showLocationPopup, setShowLocationPopup] = React.useState(false)
+
+  // logic for write hide and show location card
+  const LocationCardOpen= ()=>{
+
+    console.log("locaiton card opened");
+  }
+
   return (
     <>
       {/* Top Header */}
@@ -40,11 +39,13 @@ const Header = () => {
           </div>
 
           {/* Location */}
-          <div className="hidden md:flex items-center ml-4 cursor-pointer">
+          <div className="hidden md:flex items-center ml-4 cursor-pointer"
+          onClick={()=>setShowLocationPopup(true)}
+          >
             <MapPin size={18} />
             <div className="ml-1 text-xs leading-3">
-              <p className="text-black-300">Delivering to Mumbai</p>
-              <p className="font-semibold text-black">Update location</p>
+              <p className="text-black-300 text-xs">Delivering to Mumbai</p>
+              <p className="font-semibold text-black text-sm">Update location</p>
             </div>
           </div>
 
@@ -100,8 +101,14 @@ const Header = () => {
       </header>
 
       <Navbar />
-    </>
-  );
+      {/* IF CLICKED ON LOCATION ICON
+      SHOW POPUP
+      ELSE
+      HIDE THE POPUP
+      */}
+      {setShowLocationPopup && < Locations />}
+      </>
+    );
 };
 
 export default Header;
